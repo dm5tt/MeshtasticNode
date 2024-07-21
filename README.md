@@ -37,13 +37,10 @@ index 360d9bf1..4f66476d 100644
 +++ b/variants/heltec_esp32c3/variant.h
 @@ -1,16 +1,11 @@
 -#define BUTTON_PIN 9
--
--// LED pin on HT-DEV-ESP_V2 and HT-DEV-ESP_V3
--// https://resource.heltec.cn/download/HT-CT62/HT-CT62_Reference_Design.pdf
--// https://resource.heltec.cn/download/HT-DEV-ESP/HT-DEV-ESP_V3_Sch.pdf
+
 -#define LED_PIN 2 // LED
 -#define LED_INVERTED 0
--
+
  #define HAS_SCREEN 0
  #define HAS_GPS 0
  #undef GPS_RX_PIN
