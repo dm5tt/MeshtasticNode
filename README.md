@@ -7,7 +7,52 @@ This is a Heltec HT-CT62 based Meshtastic Router which can be integrated into a 
 
 Combined with a solar panel this device can be placed in remote areas to cover a wide range.
 
-For power managementa TI BQ24074 is being used which offers pseudo-MPPT and load switching (= battery being deactivated if the sun offers us enough energy to power the device alone).
+For power management a TI BQ24074 is being used which offers pseudo-MPPT and load switching (= battery being deactivated if the sun offers us enough energy to power the device alone).
+
+Voltages can be measured via power divider to GPIO0 (VBUS) or GPIO1 (LiPo)
+
+## Do I have to modify the Software?
+
+No. Only some smaller changes regarding the pin mapping is required.
+
+```
+diff --git a/variants/heltec_esp32c3/pins_arduino.h b/variants/heltec_esp32c3/pins_arduino.h
+index a717a370..b8ebc09c 100644
+--- a/variants/heltec_esp32c3/pins_arduino.h
++++ b/variants/heltec_esp32c3/pins_arduino.h
+@@ -6,8 +6,8 @@
+ static const uint8_t TX = 21;
+ static const uint8_t RX = 20;
+ 
+-static const uint8_t SDA = 1;
+-static const uint8_t SCL = 0;
++static const uint8_t SDA = 18;
++static const uint8_t SCL = 19;
+ 
+ static const uint8_t SS = 8;
+ static const uint8_t MOSI = 7;
+diff --git a/variants/heltec_esp32c3/variant.h b/variants/heltec_esp32c3/variant.h
+index 360d9bf1..4f66476d 100644
+--- a/variants/heltec_esp32c3/variant.h
++++ b/variants/heltec_esp32c3/variant.h
+@@ -1,16 +1,11 @@
+-#define BUTTON_PIN 9
+
+-#define LED_PIN 2 // LED
+-#define LED_INVERTED 0
+
+ #define HAS_SCREEN 0
+ #define HAS_GPS 0
+ #undef GPS_RX_PIN
+ #undef GPS_TX_PIN
+ 
++#define BATTERY_PIN 1
++#define ADC_CHANNEL ADC1_GPIO1_CHANNEL
++
+ #define USE_SX1262
+ #define LORA_SCK 10
+ #define LORA_MISO 6
+```
 
 ### Box
 
@@ -29,7 +74,7 @@ Never ever use hot glue even when if the promise that it's UV resistant. It will
 
 Professional glue for construction work and water pools/boat seem to survive every kind of weather as long you keep it within its specs.
 
-Using venting plugs with Gore protection.
+Using venting plugs with gore tex membrane.
 
 ## Future Changes
 
