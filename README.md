@@ -7,7 +7,7 @@ This is a Heltec HT-CT62 based Meshtastic Router which can be integrated into a 
 
 Combined with a solar panel this device can be placed in remote areas to cover a wide range.
 
-For power managementa TI BQ24074 is being used which offers pseudo-MPPT and load switching (= battery being deactivated if the sun offers us enough energy to power the device alone).
+For power management a TI BQ24074 is being used which offers pseudo-MPPT and load switching (= battery being deactivated if the sun offers us enough energy to power the device alone).
 
 ### Box
 
