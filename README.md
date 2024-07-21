@@ -52,12 +52,6 @@ index 360d9bf1..4f66476d 100644
  #define USE_SX1262
  #define LORA_SCK 10
  #define LORA_MISO 6
-@@ -26,4 +21,4 @@
- #define SX126X_BUSY LORA_BUSY
- #define SX126X_RESET LORA_RESET
- #define SX126X_DIO2_AS_RF_SWITCH
--#define SX126X_DIO3_TCXO_VOLTAGE 1.8
-+#define SX126X_DIO3_TCXO_VOLTAGE 1.8
 ```
 
 ### Box
