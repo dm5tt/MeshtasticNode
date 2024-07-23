@@ -25,7 +25,7 @@ I soon will make some power traces with the Nordic Power Analyzer kit.
 
 ## Do I have to modify the Software?
 
-No. Only some smaller changes regarding the pin mapping is required.
+Only some smaller pin mapping changes are required. Maybe I'll upstream this in a few weeks.
 
 ```
 diff --git a/variants/heltec_esp32c3/pins_arduino.h b/variants/heltec_esp32c3/pins_arduino.h
