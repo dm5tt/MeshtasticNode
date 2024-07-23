@@ -11,6 +11,18 @@ For power management a TI BQ24074 is being used which offers pseudo-MPPT and loa
 
 Voltages can be measured via power divider to GPIO0 (VBUS) or GPIO1 (LiPo)
 
+## But the power consumption of the ESP32 sucks!
+
+Yes and no.
+
+In this setup we don't plan to use BT or Wifi which are famous for their power consumption on this microcontroller.
+
+With the Meshtastic power saving features enabled it will mostly spend its time in light- or even deep-sleep. It automatically wakes up by a pin-triggered interrupt signal.
+
+Even with only a 1000mAh LiPo it will survive for days. Without (!) solar.
+
+I soon will make some power traces with the Nordic Power Analyzer kit.
+
 ## Do I have to modify the Software?
 
 No. Only some smaller changes regarding the pin mapping is required.
